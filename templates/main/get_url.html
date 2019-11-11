@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="col-sm-6 offset-sm-3 text-center">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                {% bootstrap_form form show_label=false form_group_class='input-group' size='large' %}
+                <div class="text-center w-100 pt-2">
+                    <button id="check-url" type="submit" class="btn btn-outline-secondary ">
+                         Parse <i class="fas fa-chevron-circle-right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    <small class="text-muted">*existing articles matching entered url will be overwritten</small>
+    </div>
+{% endblock %}

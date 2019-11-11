@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}Parse{% endblock %}
+{% block content %}
+    <div class="col-sm-6">
+        <form id="create-form" method="POST" class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button id="preview" class="btn btn-secondary">Preview</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <div class="pt-3">
+        <h5>Now at <a target="_blank" href="{{ view.kwargs.url }}">{{ view.kwargs.url }}</a></h5>
+            </div>
+    </div>
+    <div class="col-sm-6 preview">
+        <div id="accordion">
+            {% for field in form %}
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse"
+                                    data-target="#preview-{{ field.name }}"
+                                    aria-expanded="false" aria-controls="preview-{{ field.name }}">
+                                {{ field.name|title }}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="preview-{{ field.name }}" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                            -
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

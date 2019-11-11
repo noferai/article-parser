@@ -1,0 +1,1 @@
+web: gunicorn ArticleParser.wsgi --log-file -

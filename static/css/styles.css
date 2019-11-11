@@ -1,0 +1,16 @@
+body > .container {
+    padding: 90px 20px 0 0;
+}
+
+table a {
+    color: #343a40;
+    text-decoration: underline;
+}
+
+thead a {
+    color: #fff;
+}
+
+#accordion button {
+    color:#343a40;
+}

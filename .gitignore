@@ -1,0 +1,11 @@
+*.pyc
+*~
+*.swo
+*.swp
+db.sqlite3
+media/
+.idea/
+__pycache__/
+venv/
+*/migrations/[0-9]*.py
+staticfiles/

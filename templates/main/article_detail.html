@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            {{ object.title }}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{ object.content }}</p>
+                <footer class="blockquote-footer">{{ object.date }}</footer>
+            </blockquote>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% if view_link %}
+    <a href="{% url view_link record.id %}" title="View"><i
+            class="fas fa-eye"></i></a>
+{% endif %}
+{% if remove_link %}
+    <a href="{% url remove_link record.id %}" title="Remove"><i
+            class="fas fa-trash-alt"></i></a>
+{% endif %}
